@@ -1,0 +1,27 @@
+import time
+import datetime
+
+name=['abc','bca','cbd','dcb','adc','bca','cda','dcb','bda']
+locat=['New_York','Detroit','Louisville','Monticello','Indianapolis','Vincennes','Winamac','Indiana/Marengo','Petersburg','Vevay','Knox','Menominee','North_Dakota/Center','New_Salem','Los_Angeles','Anchorage','Juneau','Sitka','Yakutat']
+status=['Intransmit','cancelled','Exception','Delivered']
+shipments = ['inndata', 'cisco', 'dell', 'samsung', 'apple', 'babool']
+pickintime = ['no','yes', 'no', 'no', 'yes', 'yes', 'no', 'no']
+dropintime = ['no','yes', 'yes', 'no', 'no', 'yes', 'yes', 'no']
+statu=['Yes','No']
+cargo="Container"
+amount=[2334,2323,1412,1313,1334,5124,5234,5352,2524,2576,7683,3435,1341,3513,5124,4522,4245,3415]
+import random
+import sys
+
+today = datetime.date.today()
+dt = datetime.datetime.now()
+dt = datetime.datetime(2015, 06, 01)
+end = dt + datetime.timedelta(days=53)
+step = datetime.timedelta(days=1)
+
+result = []
+
+while dt < end:
+    result.append(dt.strftime('%Y-%m-%d %H:%M:%S'))
+    dt += step
+    print "%s\t%s\t%s\t%d\t%d\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s"%(dt,random.choice(name),cargo,random.choice(amount),random.choice(amount),random.choice(status),random.choice(locat),random.choice(locat),random.choice(statu),random.choice(statu),random.choice(shipments),random.choice(pickintime),random.choice(dropintime))
